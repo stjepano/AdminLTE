@@ -71,7 +71,7 @@ module.exports = function (grunt) {
       },
       my_target: {
         files: {
-          'scripts/adminlte.min.js': ['scripts/adminlte.js']
+          'dist/js/app.min.js': ['dist/js/app.js']
         }
       }
     },
@@ -94,7 +94,7 @@ module.exports = function (grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'images/',
+          cwd: 'build/img/',
           src: ['**/*.{png,jpg,gif,svg,jpeg}'],
           dest: 'images/'
         }]
@@ -129,23 +129,23 @@ module.exports = function (grunt) {
         csslintrc: 'build/less/.csslintrc'
       },
       dist: [
-        'styles/AdminLTE.css',
+        'dist/css/AdminLTE.css',
       ]
     },
 
     // Validate Bootstrap HTML
-    //bootlint: {
-    //  options: {
-    //    relaxerror: ['W005']
-    //  },
-    //  files: ['pages/**/*.html', '*.html']
-    //},
+    bootlint: {
+      options: {
+        relaxerror: ['W005']
+      },
+      files: ['pages/**/*.html', '*.html']
+    },
 
     // Delete images in build directory
     // After compressing the images in the build/img dir, there is no need
     // for them
     clean: {
-      build: ["images/*"]
+      build: ["build/img/*"]
     }
   });
 
