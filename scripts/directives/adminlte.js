@@ -8,23 +8,12 @@ angular.module('adminlte')
 
             var o = AdminLTEService.options();
 
-            if (o.enableControlSidebar) {
-                $.AdminLTE.controlSidebar.activate();
-            }
-
-            //Activate Bootstrap tooltip
-            if (o.enableBSToppltip && typeof $.tooltip != 'undefined') {
-                $('body').tooltip({
-                    selector: o.BSTooltipSelector
-                });
-            }
-
-            //Activate box widget
+            // Activate box widget
             if (o.enableBoxWidget) {
                 $.AdminLTE.boxWidget.activate();
             }
 
-            //Activate fast click
+            // Activate fast click
             if (o.enableFastclick && typeof FastClick != 'undefined') {
                 FastClick.attach(document.body);
             }

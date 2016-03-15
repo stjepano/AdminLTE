@@ -10,101 +10,6 @@ angular.module('adminlte').service('AdminLTEService', function() {
      * Initialize all objects ...
      */
     var initObjects = function (opts) {
-
-        /* ControlSidebar
-         * ==============
-         * Adds functionality to the right sidebar
-         *
-         * @type Object
-         * @usage $.AdminLTE.controlSidebar.activate(options)
-         */
-        $.AdminLTE.controlSidebar = {
-            //instantiate the object
-            activate: function () {
-                //Get the object
-                var _this = this;
-                //Update options
-                var o = opts.controlSidebarOptions;
-                //Get the sidebar
-                var sidebar = $(o.selector);
-                //The toggle button
-                var btn = $(o.toggleBtnSelector);
-
-                //Listen to the click event
-                btn.on('click', function (e) {
-                    e.preventDefault();
-                    //If the sidebar is not open
-                    if (!sidebar.hasClass('control-sidebar-open')
-                        && !$('body').hasClass('control-sidebar-open')) {
-                        //Open the sidebar
-                        _this.open(sidebar, o.slide);
-                    } else {
-                        _this.close(sidebar, o.slide);
-                    }
-                });
-
-                //If the body has a boxed layout, fix the sidebar bg position
-                var bg = $(".control-sidebar-bg");
-                _this._fix(bg);
-
-                //If the body has a fixed layout, make the control sidebar fixed
-                if ($('body').hasClass('fixed')) {
-                    _this._fixForFixed(sidebar);
-                } else {
-                    //If the content height is less than the sidebar's height, force max height
-                    if ($('.content-wrapper, .right-side').height() < sidebar.height()) {
-                        _this._fixForContent(sidebar);
-                    }
-                }
-            },
-            //Open the control sidebar
-            open: function (sidebar, slide) {
-                //Slide over content
-                if (slide) {
-                    sidebar.addClass('control-sidebar-open');
-                } else {
-                    //Push the content by adding the open class to the body instead
-                    //of the sidebar itself
-                    $('body').addClass('control-sidebar-open');
-                }
-            },
-            //Close the control sidebar
-            close: function (sidebar, slide) {
-                if (slide) {
-                    sidebar.removeClass('control-sidebar-open');
-                } else {
-                    $('body').removeClass('control-sidebar-open');
-                }
-            },
-            _fix: function (sidebar) {
-                var _this = this;
-                if ($("body").hasClass('layout-boxed')) {
-                    sidebar.css('position', 'absolute');
-                    sidebar.height($(".wrapper").height());
-                    $(window).resize(function () {
-                        _this._fix(sidebar);
-                    });
-                } else {
-                    sidebar.css({
-                        'position': 'fixed',
-                        'height': 'auto'
-                    });
-                }
-            },
-            _fixForFixed: function (sidebar) {
-                sidebar.css({
-                    'position': 'fixed',
-                    'max-height': '100%',
-                    'overflow': 'auto',
-                    'padding-bottom': '50px'
-                });
-            },
-            _fixForContent: function (sidebar) {
-                $(".content-wrapper, .right-side").css('min-height', sidebar.height());
-            }
-        };
-
-
         /* BoxWidget
          * =========
          * BoxWidget is a plugin to handle collapsing and
@@ -367,8 +272,9 @@ angular.module('adminlte').service('AdminLTEService', function() {
             //BoxRefresh Plugin
             enableBoxRefresh: true,
             //Bootstrap.js tooltip
-            enableBSToppltip: true,
-            BSTooltipSelector: "[data-toggle='tooltip']",
+            // We now use uib-tooltip from angular-ui-bootstrap
+            //enableBSToppltip: true,
+            //BSTooltipSelector: "[data-toggle='tooltip']",
             //Enable Fast Click. Fastclick.js creates a more
             //native touch experience with touch devices. If you
             //choose to enable the plugin, make sure you load the script
@@ -379,8 +285,9 @@ angular.module('adminlte').service('AdminLTEService', function() {
             controlSidebarOptions: {
                 //Which button should trigger the open/close event
                 toggleBtnSelector: "[data-toggle='control-sidebar']",
-                //The sidebar selector
-                selector: ".control-sidebar",
+                // The sidebar selector
+                // no need for this anymore as we are using control-sidebar directive now
+                //selector: ".control-sidebar",
                 //Enable slide over content
                 slide: true
             },

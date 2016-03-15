@@ -70,6 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="scripts/directives/notifications_dropdown.js"></script>
   <script src="scripts/directives/tasks_dropdown.js"></script>
   <script src="scripts/directives/user_dropdown.js"></script>
+  <script src="scripts/directives/control_sidebar.js"></script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -169,7 +170,7 @@ desired effect
   </footer>
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark" ng-controller="ControlSidebarCtrl as ctrl">
+  <aside control-sidebar class="control-sidebar control-sidebar-dark" ng-controller="ControlSidebarCtrl as ctrl">
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
       <li ng-class="{active: ctrl.activeTab == 'home'}"><a href="" data-toggle="tab" ng-click="ctrl.activeTab = 'home'"><i class="fa fa-home"></i></a></li>
