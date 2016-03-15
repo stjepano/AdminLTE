@@ -63,6 +63,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="scripts/directives/menuToggle.js"></script>
   <script src="scripts/directives/contentWrapper.js"></script>
   <script src="scripts/directives/user_panel.js"></script>
+  <script src="scripts/directives/search_form.js"></script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -265,14 +266,7 @@ desired effect
       <user-panel user="ctrl.user" toggle-status="ctrl.toggleStatus()"></user-panel>
 
       <!-- search form (Optional) -->
-      <form class="sidebar-form" ng-submit="ctrl.search()">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search..." ng-model="ctrl.searchTerm">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-        </div>
-      </form>
+      <search-form search-term="ctrl.searchTerm" on-submit="ctrl.search()"></search-form>
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
