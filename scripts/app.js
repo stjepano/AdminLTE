@@ -10,6 +10,30 @@ var app = angular.module('adminlte', ['ngRoute', 'ui.bootstrap'])
                     desc: 'Optional subtitle'
                 }
             })
+            .when('/ui-elements/general', {
+                controller: 'DummyCtrl',
+                templateUrl: 'views/ui-elements/general.html',
+                params: {
+                    title: 'General UI',
+                    desc: 'Preview of UI elements'
+                }
+            })
+            .when('/ui-elements/icons', {
+                controller: 'DummyCtrl',
+                templateUrl: 'views/ui-elements/icons.html',
+                params: {
+                    title: 'Icons',
+                    desc: 'a set of beautiful icons'
+                }
+            })
+            .when('/ui-elements/buttons', {
+                controller: 'DummyCtrl',
+                templateUrl: 'views/ui-elements/buttons.html',
+                params: {
+                    title: 'Buttons',
+                    desc: 'a set of buttons'
+                }
+            })
             .when('/page1', {
                 controller: 'DummyCtrl',
                 templateUrl: 'views/empty.html',

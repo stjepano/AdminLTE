@@ -11,6 +11,18 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$rou
                 icon: 'fa fa-link'
             },
             {
+                text: 'UI Elements',
+                icon: 'fa fa-laptop',
+                items: [
+                    { href: '#/ui-elements/general', text: 'General', icon: 'fa fa-circle-o'},
+                    { href: '#/ui-elements/icons', text: 'Icons', icon: 'fa fa-circle-o'},
+                    { href: '#/ui-elements/buttons', text: 'Buttons', icon: 'fa fa-circle-o'},
+                    { href: '#/ui-elements/sliders', text: 'Sliders', icon: 'fa fa-circle-o'},
+                    { href: '#/ui-elements/timeline', text: 'Timeline', icon: 'fa fa-circle-o'},
+                    { href: '#/ui-elements/modals', text: 'Modals', icon: 'fa fa-circle-o'},
+                ]
+            },
+            {
                 href: '#/page1',
                 text: 'Page 1',
                 icon: 'fa fa-link'
