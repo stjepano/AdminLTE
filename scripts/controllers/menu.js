@@ -1,4 +1,4 @@
-angular.module('adminlte').controller('MenuCtrl', ['$scope', 'Session', function($scope, session) {
+angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$route', 'Session', function($rootScope, $scope, $route, session) {
     var self = this;
     this.user = session.user();
     this.searchTerm = '';
@@ -24,15 +24,38 @@ angular.module('adminlte').controller('MenuCtrl', ['$scope', 'Session', function
                 text: 'Multi level',
                 icon: 'fa fa-link',
                 items: [{
-                    href: '#',
+                    href: '#/page1',
                     text: 'Link in level 2'
                 }, {
-                    href: '#',
+                    href: '#/page2',
                     text: 'Link in level 2'
                 }]
             }
         ]
     };
+
+    var toggleMenuItemsActiveState = function(menu, path) {
+        if ( !menu.items ) return;
+        menu.items.forEach(function(menuItem) {
+            var itemPath = menuItem.href;
+            if ( menuItem.href && menuItem.href.startsWith('#') ) {
+                itemPath = menuItem.href.substring(1);
+            }
+
+            if ( itemPath === path ) {
+                menuItem.active = true;
+            } else {
+                menuItem.active = false;
+            }
+
+            toggleMenuItemsActiveState(menuItem, path);
+        });
+    };
+
+    $rootScope.$on('$routeChangeSuccess', function(event, next, current) {
+        var path = next.$$route.originalPath;
+        toggleMenuItemsActiveState(self.menu, path);
+    });
 
     this.toggleStatus = function() {
         session.toggleStatus();
