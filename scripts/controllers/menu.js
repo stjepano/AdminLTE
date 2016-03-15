@@ -22,12 +22,13 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$rou
             },
             {
                 text: 'Multi level',
+                href: '#/multi',
                 icon: 'fa fa-link',
                 items: [{
-                    href: '#/page1',
+                    href: '#/multi/first',
                     text: 'Link in level 2'
                 }, {
-                    href: '#/page2',
+                    href: '#/multi/second',
                     text: 'Link in level 2'
                 }]
             }
