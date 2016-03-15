@@ -1,0 +1,9 @@
+<ul class="{{ css }}">
+    <li class="header" ng-if="menu.header">{{ menu.header }}</li>
+    <li ng-repeat="menuItem in menu.items" ng-class="{active: menuItem.active}">
+        <a href="{{ menuItem.href }}"><i ng-if="menuItem.icon" class="{{ menuItem.icon }}"></i> <span>{{ menuItem.text }}</span> <i class="fa fa-angle-left pull-right" ng-if="menuItem.items"></i></a>
+        <ul class="treeview-menu" ng-if="menuItem.items">
+            <li ng-repeat="subItem in menuItem.items" ng-class="{active: subItem.active}"><a href="{{ subItem.href }}">{{ subItem.text }}</a></li>
+        </ul>
+    </li>
+</ul>
