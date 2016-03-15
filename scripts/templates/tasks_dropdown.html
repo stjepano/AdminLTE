@@ -1,0 +1,33 @@
+<!-- Menu Toggle Button -->
+<a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+    <i class="fa fa-flag-o"></i>
+    <span class="label label-danger">{{ tasks.length }}</span>
+</a>
+<ul class="dropdown-menu" uib-dropdown-menu>
+    <li class="header">You have {{ tasks.length }} tasks</li>
+    <li>
+        <!-- Inner menu: contains the tasks -->
+        <ul class="menu">
+            <li ng-repeat="task in tasks"><!-- Task item -->
+                <a href="#">
+                    <!-- Task title and progress text -->
+                    <h3>
+                        {{ task.text }}
+                        <small class="pull-right">{{ task.progress }}%</small>
+                    </h3>
+                    <!-- The progress bar -->
+                    <div class="progress xs">
+                        <!-- Change the css width attribute to simulate progress -->
+                        <div class="progress-bar progress-bar-aqua" ng-style="{ width: task.progress + '%'}" role="progressbar" aria-valuenow="{{ task.progress }}" aria-valuemin="0" aria-valuemax="100">
+                            <span class="sr-only">{{ task.progress }}% Complete</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <!-- end task item -->
+        </ul>
+    </li>
+    <li class="footer">
+        <a href="#">View all tasks</a>
+    </li>
+</ul>

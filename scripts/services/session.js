@@ -7,11 +7,12 @@ angular.module('adminlte').service('Session', ['$q', 'DemoData', function($q, da
 
     var currentUser = {
         id: 1,
-        username: 'alex',
-        name: 'Alexander Pierce',
-        description: 'Web Developer',
+        username: 'stjepano',
+        name: 'Stjepan Obranković',
+        description: 'Full Stack Developer',
         status: STATUS.online,
-        img: 'images/user2-160x160.jpg'
+        img: 'images/user2-160x160.jpg',
+        since: 'Nov., 2015'
     };
 
     var messages        = [];
@@ -46,16 +47,27 @@ angular.module('adminlte').service('Session', ['$q', 'DemoData', function($q, da
         return deferred.promise;
     };
 
-    console.log('loading user data');
+    var readyCallback = null;
+    var dataLoaded = false;
     $q.all([loadMessages(), loadNotifications(), loadTasks()])
         .then(function() {
-            console.log('All data loaded!');
+            dataLoaded = true;
+            if ( readyCallback ) {
+                readyCallback();
+            }
         });
 
     
     //
     // Service methods ....
     //
+
+    this.onReady = function(cb) {
+        readyCallback = cb;
+        if ( dataLoaded ) {
+            readyCallback();
+        }
+    };
     
     /**
      * Gets currently logged in user

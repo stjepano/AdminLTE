@@ -22,40 +22,86 @@ angular.module('adminlte').service('DemoData', ['$q', '$timeout', function($q, $
 
         var prototypeMessages = [
             {
-                id: 1,
                 title: 'Support Team',
                 time: new Date().getTime(),
                 excerpt: 'Why not buy new awesome theme?',
                 sender: {
                     id: 15,
                     name: 'John Doe',
-                    image: 'images/user2-160x160.jpg'
+                    img: 'images/user2-160x160.jpg'
                 },
-                status: 'unread'
+                timeAgo: '5 mins'
+            },
+            {
+                title: 'Lorem ipsum',
+                time: new Date().getTime(),
+                excerpt: 'Lorem ipsum dolor sit amet',
+                sender: {
+                    id: 22,
+                    name: 'Jane Doe',
+                    img: 'images/user3-128x128.jpg'
+                },
+                timeAgo: '10 mins'
+            },
+            {
+                title: 'Quad et pesci',
+                time: new Date().getTime(),
+                excerpt: 'Quad et pesci nouvane retir!',
+                sender: {
+                    id: 22,
+                    name: 'Jane Doe',
+                    img: 'images/user4-128x128.jpg'
+                },
+                timeAgo: '30 mins'
             }
         ];
         var prototypeNotifications = [
             {
-                id: 1,
                 text: '5 new members joined today',
-                icon: 'fa fa-users text-aqua',
-                status: 'unread'
+                icon: 'fa fa-users text-aqua'
+            },
+            {
+                text: 'Lorem ipsum dolor sit amet',
+                icon: 'fa fa-users'
+            },
+            {
+                text: 'Qued stormi propo',
+                icon: 'fa fa-users text-aqua'
             }
         ];
         var prototypeTasks = [
             {
-                id: 1,
                 text: 'Design some buttons',
                 progress: 20,
-                color: 'aqua',
-                status: 'unread'
+                color: 'aqua'
+            },
+            {
+                text: 'Lorem ipsum dolor',
+                progress: 60,
+                color: 'red'
+            },
+            {
+                text: 'Velara veneris',
+                progress: 92,
+                color: 'aqua'
             }
         ];
+
+        var randomInt = function(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        };
 
         var generateMessages = function(count) {
 
             var randomMessage = function() {
-                return prototypeMessages[0];
+
+                var fields = ['title', 'time', 'excerpt', 'sender', 'timeAgo'];
+                var res = fields.reduce(function(acc, field) {
+                    acc[field] = prototypeMessages[randomInt(0, prototypeMessages.length)][field];
+                    return acc;
+                }, {});
+
+                return angular.copy(res);
             };
 
             for ( var i = 0; i < count; i++ ) {
@@ -68,7 +114,13 @@ angular.module('adminlte').service('DemoData', ['$q', '$timeout', function($q, $
         var generateNotifications = function(count) {
 
             var randomNotification = function() {
-                return prototypeNotifications[0];
+                var fields = ['text', 'icon'];
+                var res = fields.reduce(function(acc, field) {
+                    acc[field] = prototypeNotifications[randomInt(0, prototypeNotifications.length)][field];
+                    return acc;
+                }, {});
+
+                return angular.copy(res);
             };
 
             for ( var i = 0; i < count; i++ ) {
@@ -81,7 +133,13 @@ angular.module('adminlte').service('DemoData', ['$q', '$timeout', function($q, $
         var generateTasks = function(count) {
 
             var randomTask = function() {
-                return prototypeTasks[0];
+                var fields = ['text', 'progress', 'color'];
+                var res = fields.reduce(function(acc, field) {
+                    acc[field] = prototypeTasks[randomInt(0, prototypeTasks.length)][field];
+                    return acc;
+                }, {});
+
+                return angular.copy(res);
             };
 
             for ( var i = 0; i < count; i++ ) {
@@ -92,8 +150,8 @@ angular.module('adminlte').service('DemoData', ['$q', '$timeout', function($q, $
         };
 
 
-        generateMessages(7);
-        generateNotifications(4);
+        generateMessages(3);
+        generateNotifications(7);
         generateTasks(4);
     };
 

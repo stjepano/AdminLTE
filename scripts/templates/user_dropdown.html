@@ -1,0 +1,42 @@
+<!-- Menu Toggle Button -->
+<a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+    <!-- The user image in the navbar-->
+    <img ng-src="{{ user.img }}" class="user-image" alt="User Image">
+    <!-- hidden-xs hides the username on small devices so only the image appears. -->
+    <span class="hidden-xs">{{ user.name }}</span>
+</a>
+<ul class="dropdown-menu" uib-dropdown-menu>
+    <!-- The user image in the menu -->
+    <li class="user-header">
+        <img ng-src="{{ user.img }}" class="img-circle" alt="User Image">
+
+        <p>
+            {{ user.name }} - {{ user.description }}
+            <small>Member since {{ user.since }}</small>
+        </p>
+    </li>
+    <!-- Menu Body -->
+    <li class="user-body">
+        <div class="row">
+            <div class="col-xs-4 text-center">
+                <a href="#/followers/{{ user.id }}">Followers</a>
+            </div>
+            <div class="col-xs-4 text-center">
+                <a href="#/sales/{{ user.id }}">Sales</a>
+            </div>
+            <div class="col-xs-4 text-center">
+                <a href="#/friends/{{ user.id }}">Friends</a>
+            </div>
+        </div>
+        <!-- /.row -->
+    </li>
+    <!-- Menu Footer-->
+    <li class="user-footer">
+        <div class="pull-left">
+            <a href="#/profile" class="btn btn-default btn-flat">Profile</a>
+        </div>
+        <div class="pull-right">
+            <a href="" class="btn btn-default btn-flat" ng-click="logout()">Sign out</a>
+        </div>
+    </li>
+</ul>

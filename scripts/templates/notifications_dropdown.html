@@ -1,0 +1,20 @@
+<!-- Menu toggle button -->
+<a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+    <i class="fa fa-bell-o"></i>
+    <span class="label label-warning">{{ notifications.length }}</span>
+</a>
+<ul class="dropdown-menu" uib-dropdown-menu>
+    <li class="header">You have {{ notifications.length }} notifications</li>
+    <li>
+        <!-- Inner Menu: contains the notifications -->
+        <ul class="menu">
+            <li ng-repeat="notification in notifications"><!-- start notification -->
+                <a href="#">
+                    <i class="{{ notification.icon }}"></i> {{ notification.text }}
+                </a>
+            </li>
+            <!-- end notification -->
+        </ul>
+    </li>
+    <li class="footer"><a href="#">View all</a></li>
+</ul>

@@ -1,0 +1,31 @@
+    <!-- Menu toggle button -->
+    <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+        <i class="fa fa-envelope-o"></i>
+        <span class="label label-success">{{ messages.length }}</span>
+    </a>
+    <ul class="dropdown-menu" uib-dropdown-menu>
+        <li class="header">You have {{ messages.length }} messages</li>
+        <li>
+            <!-- inner menu: contains the messages -->
+            <ul class="menu">
+                <li ng-repeat="message in messages"><!-- start message -->
+                    <a href="{{ message.href }}">
+                        <div class="pull-left">
+                            <!-- User Image -->
+                            <img ng-src="{{ message.sender.img }}" class="img-circle" alt="User Image">
+                        </div>
+                        <!-- Message title and timestamp -->
+                        <h4>
+                            {{ message.title }}
+                            <small><i class="fa fa-clock-o"></i> {{ message.timeAgo }}</small>
+                        </h4>
+                        <!-- The message -->
+                        <p>{{ message.excerpt }}</p>
+                    </a>
+                </li>
+                <!-- end message -->
+            </ul>
+            <!-- /.menu -->
+        </li>
+        <li class="footer"><a href="#/inbox">See All Messages</a></li>
+    </ul>

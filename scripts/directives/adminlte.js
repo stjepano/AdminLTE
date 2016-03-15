@@ -12,15 +12,6 @@ angular.module('adminlte')
                 $.AdminLTE.controlSidebar.activate();
             }
 
-            //Add slimscroll to navbar dropdown
-            if (o.navbarMenuSlimscroll && typeof $.fn.slimscroll != 'undefined') {
-                $(".navbar .menu").slimscroll({
-                    height: o.navbarMenuHeight,
-                    alwaysVisible: false,
-                    size: o.navbarMenuSlimscrollWidth
-                }).css("width", "100%");
-            }
-
             //Activate Bootstrap tooltip
             if (o.enableBSToppltip && typeof $.tooltip != 'undefined') {
                 $('body').tooltip({
