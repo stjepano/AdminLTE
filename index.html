@@ -51,6 +51,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="scripts/services/adminlte.js"></script>
   <!-- Controllers -->
   <script src="scripts/controllers/dummy.js"></script>
+  <script src="scripts/controllers/control_sidebar.js"></script>
   <!-- Directives -->
   <script src="scripts/directives/adminlte.js"></script>
   <script src="scripts/directives/fullheight.js"></script>
@@ -340,16 +341,16 @@ desired effect
   </footer>
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
+  <aside class="control-sidebar control-sidebar-dark" ng-controller="ControlSidebarCtrl as ctrl">
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+      <li ng-class="{active: ctrl.activeTab == 'home'}"><a data-toggle="tab" ng-click="ctrl.activeTab = 'home'"><i class="fa fa-home"></i></a></li>
+      <li ng-class="{active: ctrl.activeTab == 'settings'}"><a ng-click="ctrl.activeTab = 'settings'" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">
       <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
+      <div class="tab-pane" ng-class="{active: ctrl.activeTab == 'home'}" id="control-sidebar-home-tab">
         <h3 class="control-sidebar-heading">Recent Activity</h3>
         <ul class="control-sidebar-menu">
           <li>
@@ -389,7 +390,7 @@ desired effect
       <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
       <!-- /.tab-pane -->
       <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
+      <div class="tab-pane" ng-class="{active: ctrl.activeTab == 'settings'}" id="control-sidebar-settings-tab">
         <form method="post">
           <h3 class="control-sidebar-heading">General Settings</h3>
 
