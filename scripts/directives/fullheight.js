@@ -1,7 +1,9 @@
 angular.module('adminlte')
-    .directive('fullHeight', function($window) {
+    .directive('fullHeight', ['$window', 'AdminLTEService', function($window, AdminLTEService) {
         return function(scope, element) {
             var win = angular.element($window);
+
+            var opts = AdminLTEService.options();
 
             var changeHeight = function() {
                 if (jQuery('body').hasClass('fixed')) {
@@ -17,10 +19,12 @@ angular.module('adminlte')
                         postSetWidth = sidebar_height;
                     }
 
-                    var controlSidebar = jQuery(jQuery.AdminLTE.options.controlSidebarOptions.selector);
-                    if (typeof controlSidebar !== "undefined") {
-                        if (controlSidebar.height() > postSetWidth)
-                            element.css('min-height', controlSidebar.height());
+                    if ( opts.controlSidebarOptions && opts.controlSidebarOptions.selector ) {
+                        var controlSidebar = jQuery(opts.controlSidebarOptions.selector);
+                        if (typeof controlSidebar !== "undefined") {
+                            if (controlSidebar.height() > postSetWidth)
+                                element.css('min-height', controlSidebar.height());
+                        }
                     }
                 }
             };
@@ -28,4 +32,4 @@ angular.module('adminlte')
             win.bind('resize', changeHeight);
             changeHeight();
         };
-    });
+    }]);

@@ -1,6 +1,9 @@
 angular.module('adminlte')
-    .directive('sidebar', function($window) {
+    .directive('sidebar', ['$window', 'AdminLTEService', function($window, AdminLTEService) {
         return function(scope, element) {
+            var opts = AdminLTEService.options();
+            var screenSizes = opts.screenSizes;
+
             var win = angular.element($window);
 
             var fixSidebar = function () {
@@ -58,7 +61,7 @@ angular.module('adminlte')
             /** Adds multilevel menu support to sidebar */
             var tree = tree = function () {
                 var _this = this;
-                var animationSpeed = jQuery.AdminLTE.options.animationSpeed;
+                var animationSpeed = opts.animationSpeed;
                 element.on('click', 'li a', function (e) {
                     //Get the clicked link and the next element
                     var $this = jQuery(this);
@@ -105,4 +108,37 @@ angular.module('adminlte')
 
             tree();
         };
-    });
+
+        if (jQuery.AdminLTE.options.sidebarPushMenu && (
+            jQuery.AdminLTE.options.sidebarExpandOnHover
+                || (jQuery('body').hasClass('fixed')
+                && jQuery('body').hasClass('sidebar-mini')))) {
+            expandOnHover();
+        };
+
+        var expandOnHover = function () {
+            var screenWidth = jQuery.AdminLTE.options.screenSizes.sm - 1;
+            //Expand sidebar on hover
+            element.hover(function () {
+                if (jQuery('body').hasClass('sidebar-mini')
+                    && jQuery("body").hasClass('sidebar-collapse')
+                    && win.width() > screenWidth) {
+                    expand();
+                }
+            }, function () {
+                if (jQuery('body').hasClass('sidebar-mini')
+                    && jQuery('body').hasClass('sidebar-expanded-on-hover')
+                    && win.width() > screenWidth) {
+                    collapse();
+                }
+            });
+        };
+        var expand = function () {
+            jQuery("body").removeClass('sidebar-collapse').addClass('sidebar-expanded-on-hover');
+        };
+        var collapse = function () {
+            if (jQuery('body').hasClass('sidebar-expanded-on-hover')) {
+                jQuery('body').removeClass('sidebar-expanded-on-hover').addClass('sidebar-collapse');
+            }
+        };
+    }]);

@@ -33,6 +33,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- jQuery -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Optionally, you can add Slimscroll and FastClick plugins.
+       Both of these plugins are recommended to enhance the
+       user experience. Slimscroll is required when using the
+       fixed layout. -->
   <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 
   <!-- AngularJS includes -->
@@ -42,11 +47,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Main app -->
   <script src="scripts/app.js"></script>
-  <!- Controllers -->
+  <!-- Services -->
+  <script src="scripts/services/adminlte.js"></script>
+  <!-- Controllers -->
   <script src="scripts/controllers/dummy.js"></script>
   <!-- Directives -->
+  <script src="scripts/directives/adminlte.js"></script>
   <script src="scripts/directives/fullheight.js"></script>
   <script src="scripts/directives/sidebar.js"></script>
+  <script src="scripts/directives/menuToggle.js"></script>
+  <script src="scripts/directives/contentWrapper.js"></script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -68,7 +78,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" adminlte>
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -85,7 +95,7 @@ desired effect
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <a class="sidebar-toggle" role="button" menu-toggle>
         <span class="sr-only">Toggle navigation</span>
       </a>
       <!-- Navbar Right Menu -->
@@ -314,7 +324,7 @@ desired effect
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" full-height>
+  <div class="content-wrapper" full-height content-wrapper>
       <div class="content-wrapper-fix" ng-view></div>
   </div>
   <!-- /.content-wrapper -->
@@ -405,15 +415,5 @@ desired effect
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
-<!-- REQUIRED JS SCRIPTS -->
-
-<!-- AdminLTE App -->
-<script src="scripts/adminlte.js"></script>
-
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
 </body>
 </html>
