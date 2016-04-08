@@ -1,4 +1,4 @@
-var app = angular.module('adminlte', ['ngRoute', 'ui.bootstrap'])
+var app = angular.module('adminlte', ['ngRoute', 'ui.bootstrap', 'ngAnimate'])
     .config(function($routeProvider) {
 
         $routeProvider

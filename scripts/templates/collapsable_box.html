@@ -1,0 +1,15 @@
+<div class="box box-{{ type }} {{ customClass }}">
+    <div class="box-header {{ headerClasses }}">
+        <h4 class="box-title">
+            <i class="{{ iconClass }}" ng-if="iconClass"></i>
+            <a ng-click="toggleCollapsed()">
+                {{ title }}
+            </a>
+        </h4>
+    </div>
+    <div uib-collapse="collapsed">
+        <div class="box-body {{ bodyClass }}">
+            <div ng-transclude></div>
+        </div>
+    </div>
+</div>

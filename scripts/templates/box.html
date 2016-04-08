@@ -1,0 +1,8 @@
+<div class="box box-{{ type }} {{ customClass }}">
+    <div class="box-header {{ headerClasses }}">
+        <h3 ng-if="!collapsable && (iconClass || title)" class="box-title"><i class="{{ iconClass }}" ng-if="iconClass"></i> {{ title }}</h3>
+    </div>
+    <div class="box-body {{ bodyClass }}">
+        <div ng-transclude></div>
+    </div>
+</div>
