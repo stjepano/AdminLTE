@@ -15,6 +15,9 @@ Documentation
 Visit the [original online documentation](https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html) for the most
 updated guide. Information will be added on a weekly basis.
 
+Styles are same as in original AdminLTE but **AdminLTE - Angular** uses custom [directives](#) and special [menu system](#)
+you should read about.
+
 Browser Support
 ---------------
 - IE 9+
