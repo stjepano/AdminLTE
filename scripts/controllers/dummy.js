@@ -42,6 +42,27 @@ angular.module('adminlte')
                 }
             ]
         };
+
+
+        $scope.sliders = {
+            ion: {
+                first: {
+                    from: 0
+                },
+                second: {
+                    from: 30000,
+                    to: 90000
+                },
+                third: {
+                    from: 50,
+                    to: 60
+                },
+                fourth: {
+                    from: 20,
+                    to: 30
+                }
+            }
+        };
         
 
     }]);

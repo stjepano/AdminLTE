@@ -34,6 +34,14 @@ var app = angular.module('adminlte', ['ngRoute', 'ui.bootstrap', 'ngAnimate'])
                     desc: 'a set of buttons'
                 }
             })
+            .when('/ui-elements/sliders', {
+                controller: 'DummyCtrl',
+                templateUrl: 'views/ui-elements/sliders.html',
+                params: {
+                    title: 'Sliders',
+                    desc: 'range sliders'
+                }
+            })
             .when('/page1', {
                 controller: 'DummyCtrl',
                 templateUrl: 'views/empty.html',

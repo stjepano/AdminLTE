@@ -1,0 +1,85 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        {{ title }}
+        <small ng-show="desc != null">{{ desc }}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+    </ol>
+</section>
+
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <box type="primary" title="Ion Slider">
+                <div class="row margin">
+                    <div class="col-sm-6">
+                        <ion-range-slider min="0" max="200" step="1" type="single" ng-model="sliders.ion.first"></ion-range-slider>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <ion-range-slider type="double" min="1000" max="100000" step="500" postfix=" &euro;" ng-model="sliders.ion.second" grid="true" />
+                    </div>
+                </div>
+                <div class="row margin">
+                    <div class="col-sm-6">
+                        <ion-range-slider min="20" max="300" type="double" ng-model="sliders.ion.third"></ion-range-slider>
+                    </div>
+                    <div class="col-sm-6">
+                        <ion-range-slider min="0" max="100" type="double" ng-model="sliders.ion.fourth" postfix="%" hide-min-max="true" hide-from-to="true"></ion-range-slider>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <div class="col-sm-12">
+                        <ion-range-slider type="double" min="1000" max="100000" step="500" prefix="$" ng-model="sliders.ion.second" grid="true" />
+                    </div>
+                </div>
+            </box>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <box type="primary" title="Bootstrap Slider">
+                <div class="row margin">
+                    <div class="col-sm-6">
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="red">
+
+                        <p>data-slider-id="red"</p>
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="blue">
+
+                        <p>data-slider-id="blue"</p>
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="green">
+
+                        <p>data-slider-id="green"</p>
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="yellow">
+
+                        <p>data-slider-id="yellow"</p>
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="aqua">
+
+                        <p>data-slider-id="aqua"</p>
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="purple">
+
+                        <p style="margin-top: 10px">data-slider-id="purple"</p>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="red">
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="blue">
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="green">
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="yellow">
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="aqua">
+                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="purple">
+                    </div>
+                </div>
+            </box>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
