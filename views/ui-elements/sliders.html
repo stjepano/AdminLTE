@@ -49,32 +49,31 @@
             <box type="primary" title="Bootstrap Slider">
                 <div class="row margin">
                     <div class="col-sm-6">
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="red">
-
+                        <slider ng-model="sliders.bs.first" range="true" min="-200" max="200" step="5" value="[-100, 100]" orientation="horizontal" selection="before" tooltip="show" sliderid="red" />
                         <p>data-slider-id="red"</p>
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="blue">
 
+                        <slider min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.second" range="true" orientation="horizontal" selection="before" tooltip="show" sliderid="blue" />
                         <p>data-slider-id="blue"</p>
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="green">
 
+                        <slider min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.third" range="true" orientation="horizontal" selection="before" tooltip="show" sliderid="green" />
                         <p>data-slider-id="green"</p>
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="yellow">
 
+                        <slider min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.fourth" range="true" orientation="horizontal" selection="before" tooltip="show" sliderid="yellow" />
                         <p>data-slider-id="yellow"</p>
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="aqua">
 
+                        <slider min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.fifth" range="true" orientation="horizontal" selection="before" tooltip="show" sliderid="aqua" />
                         <p>data-slider-id="aqua"</p>
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="purple">
 
+                        <slider min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.sixth" range="true" orientation="horizontal" selection="before" tooltip="show" sliderid="purple" />
                         <p style="margin-top: 10px">data-slider-id="purple"</p>
                     </div>
                     <div class="col-sm-6 text-center">
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="red">
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="blue">
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="green">
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="yellow">
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="aqua">
-                        <input type="text" value="" class="slider form-control" data-slider-min="-200" data-slider-max="200" data-slider-step="5" data-slider-value="[-100,100]" data-slider-orientation="vertical" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="purple">
+                        <slider style="display: inline-block; margin-left: 10px;" ng-model="sliders.bs.first" range="true" min="-200" max="200" step="5" value="[-100, 100]" orientation="vertical" selection="before" tooltip="show" sliderid="red" />
+                        <slider style="display: inline-block; margin-left: 10px;" min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.second" range="true" orientation="vertical" selection="before" tooltip="show" sliderid="blue" />
+                        <slider style="display: inline-block; margin-left: 10px;" min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.third"  range="true" orientation="vertical" selection="before" tooltip="show" sliderid="green" />
+                        <slider style="display: inline-block; margin-left: 10px;" min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.fourth" range="true" orientation="vertical" selection="before" tooltip="show" sliderid="yellow" />
+                        <slider style="display: inline-block; margin-left: 10px;" min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.fifth"  range="true" orientation="vertical" selection="before" tooltip="show" sliderid="aqua" />
+                        <slider style="display: inline-block; margin-left: 10px;" min="-200" max="200" step="5" value="[-100,100]" ng-model="sliders.bs.sixth"  range="true" orientation="vertical" selection="before" tooltip="show" sliderid="purple" />
                     </div>
                 </div>
             </box>

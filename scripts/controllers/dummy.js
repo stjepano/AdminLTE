@@ -61,6 +61,9 @@ angular.module('adminlte')
                     from: 20,
                     to: 30
                 }
+            },
+            bs: {
+                first: [-100,100]
             }
         };
         
