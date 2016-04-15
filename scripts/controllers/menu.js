@@ -23,6 +23,15 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$rou
                 ]
             },
             {
+                text: 'Forms',
+                icon: 'fa fa-edit',
+                items: [
+                    { href: '#/forms/general', text: 'General Elements', icon: 'fa fa-circle-o' },
+                    { href: '#/forms/advanced', text: 'Advanced Elements', icon: 'fa fa-circle-o' },
+                    { href: '#/forms/editors', text: 'Editors', icon: 'fa fa-circle-o' }
+                ]
+            },
+            {
                 href: '#/page1',
                 text: 'Page 1',
                 icon: 'fa fa-link'
