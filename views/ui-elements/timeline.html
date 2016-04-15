@@ -134,11 +134,12 @@
 
     <div class="row" style="margin-top: 10px;">
         <div class="col-md-12">
-            <div class="box box-primary">
-                <div class="box-header">
-                    <h3 class="box-title"><i class="fa fa-code"></i> Timeline Markup</h3>
-                </div>
-                <div class="box-body">
+            <box type="primary" title="Timeline Markup" icon-class="fa fa-code">
+				<uib-alert type="warning" ng-init="timelineWarningVisible = true" close="timelineWarningVisible = false" ng-show="timelineWarningVisible">
+					<h4><i class="icon fa fa-warning"></i> Warning</h4>
+					HTML markup same as non-Angular template. I did not create any special directive for this. You can use ng-repeat to make the timeline angularized 
+					or if you feel adventurous you can create your own directive!
+				</uib-alert>
                   <pre style="font-weight: 600;">
 &lt;ul class="timeline">
 
@@ -175,9 +176,7 @@
 
 &lt;/ul>
                   </pre>
-                </div>
-                <!-- /.box-body -->
-            </div>
+            </box>
             <!-- /.box -->
         </div>
         <!-- /.col -->

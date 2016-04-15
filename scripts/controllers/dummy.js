@@ -1,5 +1,5 @@
 angular.module('adminlte')
-    .controller('DummyCtrl', ['$scope', '$route', function($scope, $route) {
+    .controller('DummyCtrl', ['$scope', '$route', '$uibModal', function($scope, $route, $uibModal) {
         $scope.title = $route.current.$$route.params.title;
         $scope.desc = $route.current.$$route.params.desc || '';
         
@@ -65,6 +65,32 @@ angular.module('adminlte')
             bs: {
                 first: [-100,100]
             }
+        };
+
+
+        // MODAL
+        $scope.openModal = function(type) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'modal-' + type + '.html',
+                windowClass: 'modal-' + type,
+                controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
+                    $scope.close = function() {
+                        $uibModalInstance.dismiss('cancel');
+                    };
+
+                    $scope.save = function() {
+                        $uibModalInstance.close(true);
+                    };
+                }],
+                size: 'md' // sm, lg, xs
+            });
+
+            modalInstance.result.then(function(val) {
+                alert('OK with val ' + val);
+            }, function(val) {
+                alert('Dismiss ' + val);
+            });
         };
         
 

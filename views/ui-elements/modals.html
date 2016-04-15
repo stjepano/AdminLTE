@@ -1,0 +1,125 @@
+<script type="text/ng-template" id="modal-default.html">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="close()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Default Modal</h4>
+        </div>
+        <div class="modal-body">
+            <p>One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" ng-click="close()">Close</button>
+            <button type="button" class="btn btn-primary" ng-click="save()">Save changes</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="modal-primary.html">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Primary Modal</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" ng-click="close()">Close</button>
+                <button type="button" class="btn btn-outline" ng-click="save()">Save changes</button>
+            </div>
+        </div>
+</script>
+
+<script type="text/ng-template" id="modal-info.html">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Info Modal</h4>
+    </div>
+    <div class="modal-body">
+        <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline pull-left" ng-click="close()">Close</button>
+        <button type="button" class="btn btn-outline" ng-click="save()">Save changes</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="modal-warning.html">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Warning Modal</h4>
+    </div>
+    <div class="modal-body">
+        <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline pull-left" ng-click="close()">Close</button>
+        <button type="button" class="btn btn-outline" ng-click="save()">Save changes</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="modal-success.html">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Success Modal</h4>
+    </div>
+    <div class="modal-body">
+        <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline pull-left" ng-click="close()">Close</button>
+        <button type="button" class="btn btn-outline" ng-click="save()">Save changes</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="modal-danger.html">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Danger Modal</h4>
+    </div>
+    <div class="modal-body">
+        <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline pull-left" ng-click="close()">Close</button>
+        <button type="button" class="btn btn-outline" ng-click="save()">Save changes</button>
+    </div>
+</script>
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        {{ title }}
+        <small ng-show="desc != null">{{ desc }}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+    </ol>
+</section>
+
+<section class="content">
+    <callout type="info">
+        <h4>Reminder!</h4>
+        Instructions for how to use modals are available on the
+        <a href="https://angular-ui.github.io/bootstrap/#/modal">Angular bootstrap documentation</a>
+    </callout>
+
+    <div class="modal-buttons text-center">
+        <p>Click on button to open a modal.</p>
+        <button class="btn btn-default" ng-click="openModal('default')">Default modal</button>
+        <button class="btn btn-primary" ng-click="openModal('primary')">Primary modal</button>
+        <button class="btn btn-info" ng-click="openModal('info')">Info modal</button>
+        <button class="btn btn-warning" ng-click="openModal('warning')">Warning modal</button>
+        <button class="btn btn-success" ng-click="openModal('success')">Success modal</button>
+        <button class="btn btn-danger" ng-click="openModal('danger')">Danger modal</button>
+    </div>
+</section>

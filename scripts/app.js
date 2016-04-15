@@ -50,6 +50,14 @@ var app = angular.module('adminlte', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'u
                     desc: 'example'
                 }
             })
+            .when('/ui-elements/modals', {
+                controller: 'DummyCtrl',
+                templateUrl: 'views/ui-elements/modals.html',
+                params: {
+                    title: 'Modals',
+                    desc: 'new'
+                }
+            })
             .when('/page1', {
                 controller: 'DummyCtrl',
                 templateUrl: 'views/empty.html',
