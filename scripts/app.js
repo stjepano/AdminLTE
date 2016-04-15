@@ -42,6 +42,14 @@ var app = angular.module('adminlte', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'u
                     desc: 'range sliders'
                 }
             })
+            .when('/ui-elements/timeline', {
+                controller: 'DummyCtrl',
+                templateUrl: 'views/ui-elements/timeline.html',
+                params: {
+                    title: 'Timeline',
+                    desc: 'example'
+                }
+            })
             .when('/page1', {
                 controller: 'DummyCtrl',
                 templateUrl: 'views/empty.html',
