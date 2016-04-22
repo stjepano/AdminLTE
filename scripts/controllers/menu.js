@@ -28,7 +28,8 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$rou
                 items: [
                     { href: '#/forms/general', text: 'General Elements', icon: 'fa fa-circle-o' },
                     { href: '#/forms/advanced', text: 'Advanced Elements', icon: 'fa fa-circle-o' },
-                    { href: '#/forms/editors', text: 'Editors', icon: 'fa fa-circle-o' }
+                    { href: '#/forms/editors', text: 'Editors', icon: 'fa fa-circle-o' },
+                    { href: '#/forms/codemirror', text: 'CodeMirror', icon: 'fa fa-circle-o' }
                 ]
             },
             {

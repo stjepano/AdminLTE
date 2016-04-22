@@ -211,5 +211,21 @@ angular.module('adminlte')
         $scope.htmlText = '<h1>This is some text<br/></h1><p>We are <a href="http://textangular.com" target="">textAngular</a> editor which works out of the box with AngularJS.</p><p><br/><br/></p>';
         $scope.tinymceText = '<h1>The TinyMCE editor</h1>\n<p>Please take a look <a href="https://github.com/angular-ui/ui-tinymce">here</a> and <a href="https://www.tinymce.com/docs/configure/">here</a> for more info on configuration.</p>';
 
+        // codemirror
+        $scope.codemirrorCode = '<!doctype html>\n' +
+                                '<html>\n' +
+                                '    <head>\n' +
+                                '        <title>Hello World</title>\n' +
+                                '    </head>\n' +
+                                '    <body>\n' +
+                                '        <h1>\n' +
+                                '            Hello World\n' +
+                                '        </h1>\n' +
+                                '        <p>\n' +
+                                '            How are you?\n' +
+                                '        </p>\n' +
+                                '    </body>\n' +
+                                '</html>';
+
 
     }]);

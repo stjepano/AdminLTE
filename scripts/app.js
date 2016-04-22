@@ -1,4 +1,4 @@
-var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize', 'ngBootstrap', 'textAngular', 'ui.tinymce'])
+var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize', 'ngBootstrap', 'textAngular', 'ui.tinymce', 'ui.codemirror'])
 .config(function($routeProvider) {
     "use strict";
 
@@ -81,6 +81,14 @@ var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngA
         params: {
             title: 'Text Editors',
             desc: 'Advanced form element'
+        }
+    })
+    .when('/forms/codemirror', {
+        controller: 'DummyCtrl',
+        templateUrl: 'views/forms/codemirror.html',
+        params: {
+            title: 'CodeMirror',
+            desc: 'Advanced code editor'
         }
     })
     .when('/page1', {

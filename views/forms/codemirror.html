@@ -12,6 +12,29 @@
 <section class="content">
     <div class="row">
         <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">CodeMirror
+                        <small>Versatile text editor implemented in JavaScript for the browser. It is specialized for editing code. <strong>Here configured for HTML coding</strong>.</small>
+                    </h3>
+                    <!-- tools box -->
+                    <div class="pull-right box-tools">
+                        <button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-default btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button>
+                    </div>
+                    <!-- /. tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body pad">
+                    <form>
+                        <ui-codemirror ng-model="codemirrorCode" ui-codemirror-opts="{ lineWrapping: false, matchTags: true, autoCloseTags: true, indentUnit: 4, smartIndent: true, lineNumbers: true, mode: 'htmlmixed' }"></ui-codemirror>
+                    </form>
+                </div>
+            </div>
+            <p>Read codemirror documentation <a href="https://github.com/angular-ui/ui-codemirror">here</a> and <a href="http://codemirror.net/">here</a>.</p>
+            <pre>{{ codemirrorCode }}</pre>
         </div>
     </div>
 </section>
