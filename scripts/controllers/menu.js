@@ -41,9 +41,9 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$rou
                 ]
             },
             {
-                href: '#/page1',
-                text: 'Page 1',
-                icon: 'fa fa-link'
+                href: '#/calendar',
+                text: 'Calendar',
+                icon: 'fa fa-calendar'
             },
             {
                 href: '#/page2',

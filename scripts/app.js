@@ -1,4 +1,4 @@
-var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize', 'ngBootstrap', 'textAngular', 'ui.tinymce', 'ui.codemirror', 'ui.grid'])
+var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize', 'ngBootstrap', 'textAngular', 'ui.tinymce', 'ui.codemirror', 'ui.grid', 'ui.grid.selection', 'ui.calendar'])
 .config(function($routeProvider) {
     "use strict";
 
@@ -105,6 +105,14 @@ var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngA
         params: {
             title: 'Angular UI Grid',
             desc: 'A data grid for AngularJS'
+        }
+    })
+    .when('/calendar', {
+        controller: 'CalendarCtrl',
+        templateUrl: 'views/calendar.html',
+        params: {
+            title: 'Calendar',
+            desc: 'Angular UI Calendar'
         }
     })
     .when('/page1', {
