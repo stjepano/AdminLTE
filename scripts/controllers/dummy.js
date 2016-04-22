@@ -416,11 +416,20 @@ angular.module('adminlte')
                         "company": "Fuelton",
                         "employed": false
                     }],
+                    enableRowSelection: true,
+                    enableRowHeaderSelection: false,
+                    noUnselect: true,
+                    multiSelect: false,
                     enableHorizontalScrollbar: uiGridConstants.scrollbars.NEVER
                 }
 
             }
-        }
+        };
+
+        $scope.uigrid.simple.options.onRegisterApi = function( gridApi ) {
+            $scope.gridApi = gridApi;
+            $scope.gridApi.selection.selectRow($scope.uigrid.options.data[0]);
+        };
 
 
     }]);
