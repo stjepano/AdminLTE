@@ -8,3 +8,63 @@
         <li class="active">Here</li>
     </ol>
 </section>
+
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">textAngular
+                        <small>A Lightweight, Two-Way-Bound &amp; Totally Awesome Angular.js Text-Editor</small>
+                    </h3>
+                    <!-- tools box -->
+                    <div class="pull-right box-tools">
+                        <button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-default btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button>
+                    </div>
+                    <!-- /. tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body pad">
+                    <form>
+                        <div text-angular ng-model="htmlText"></div>
+                    </form>
+                </div>
+            </div>
+            <pre>{{ htmlText }}</pre>
+        </div>
+        <!-- /.col-->
+    </div>
+    <!-- ./row -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">TinyMCE
+                        <small>Editor used by many, including Wordpress</small>
+                    </h3>
+                    <!-- tools box -->
+                    <div class="pull-right box-tools">
+                        <button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-default btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button>
+                    </div>
+                    <!-- /. tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body pad">
+                    <form>
+                        <textarea ui-tinymce="{ plugins: 'advlist autolink link image lists charmap print preview', theme: 'modern', menubar: false, height: 600}" ng-model="tinymceText" />
+                    </form>
+                </div>
+            </div>
+            <pre>{{ tinymceText }}</pre>
+        </div>
+        <!-- /.col-->
+    </div>
+</section>

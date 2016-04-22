@@ -80,7 +80,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control" input-mask="{alias: 'dd/mm/yyyy'}" ng-model="dateMask1" />
+                            <input type="text" class="form-control" ui-mask="99/99/9999" ng-model="dateMask1" />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -92,7 +92,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control" input-mask="{alias: 'dd.mm.yyyy'}" ng-model="dateMask2" />
+                            <input type="text" class="form-control" ui-mask="99.99.9999" ng-model="dateMask2" />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -106,7 +106,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-phone"></i>
                             </div>
-                            <input type="text" class="form-control" input-mask='{"mask": "(999) 999-9999"}' ng-model="usPhoneMask" />
+                            <input type="text" class="form-control" ui-mask="(999) 999-9999" ng-model="usPhoneMask" />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -120,7 +120,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-phone"></i>
                             </div>
-                            <input type="text" class="form-control" input-mask='{"mask": ["999-999-9999 [x99999]", "+099 99 99 9999[9]-9999"]}' />
+                            <input type="text" class="form-control" ui-mask="999-999-9999" ng-model="intlPhoneMask" />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -134,7 +134,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-laptop"></i>
                             </div>
-                            <input type="text" class="form-control" input-mask='{"alias": "ip"}' />
+                            <input type="text" class="form-control" ui-mask="9?9?9.9?9?9.9?9?9.9?9?9" ng-model="ipaddr" />
                         </div>
                         <!-- /.input group -->
                     </div>

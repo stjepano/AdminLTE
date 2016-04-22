@@ -36,7 +36,10 @@
     "jquery.inputmask": "^3.3.1",
     "iCheck": "^1.0.2",
     "bootstrap-timepicker": "^0.5.2",
-    "mjolnic-bootstrap-colorpicker": "bootstrap-colorpicker#^2.3.3"
+    "mjolnic-bootstrap-colorpicker": "bootstrap-colorpicker#^2.3.3",
+    "textAngular": "^1.5.0",
+    "angular-ui-mask": "^1.8.3",
+    "angular-ui-tinymce": "^0.0.15"
   },
   "resolutions": {
     "angular": "^1.5.0",
