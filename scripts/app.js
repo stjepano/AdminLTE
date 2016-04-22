@@ -1,4 +1,4 @@
-var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize', 'ngBootstrap', 'textAngular', 'ui.tinymce', 'ui.codemirror'])
+var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize', 'ngBootstrap', 'textAngular', 'ui.tinymce', 'ui.codemirror', 'ui.grid'])
 .config(function($routeProvider) {
     "use strict";
 
@@ -89,6 +89,22 @@ var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngA
         params: {
             title: 'CodeMirror',
             desc: 'Advanced code editor'
+        }
+    })
+    .when('/tables/simple', {
+        controller: 'DummyCtrl',
+        templateUrl: 'views/tables/simple.html',
+        params: {
+            title: 'Simple Tables',
+            desc: 'preview of simple tables'
+        }
+    })
+    .when('/tables/uigrid', {
+        controller: 'DummyCtrl',
+        templateUrl: 'views/tables/uigrid.html',
+        params: {
+            title: 'Angular UI Grid',
+            desc: 'A data grid for AngularJS'
         }
     })
     .when('/page1', {

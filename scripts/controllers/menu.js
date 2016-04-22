@@ -33,6 +33,14 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$rou
                 ]
             },
             {
+                text: 'Tables',
+                icon: 'fa fa-table',
+                items: [
+                    { href: '#/tables/simple', text: 'Simple tables', icon: 'fa fa-circle-o' },
+                    { href: '#/tables/uigrid', text: 'UI Grid', icon: 'fa fa-circle-o' }
+                ]
+            },
+            {
                 href: '#/page1',
                 text: 'Page 1',
                 icon: 'fa fa-link'

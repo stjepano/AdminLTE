@@ -1,0 +1,34 @@
+<style type="text/css">
+    .grid {
+        width: 100%;
+        height: 500px;
+    }
+</style>
+
+<section class="content-header">
+    <h1>
+        {{ title }}
+        <small ng-show="desc != null">{{ desc }}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Simple example</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <p><a href="http://ui-grid.info/">Angular UI Grid</a> tutorials <a href="http://ui-grid.info/docs/#/tutorial">here</a>, API documentation is <a href="http://ui-grid.info/docs/#/api">here</a>.</p>
+                    <div ui-grid="uigrid.simple.options" class="grid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,5 @@
 angular.module('adminlte')
-    .controller('DummyCtrl', ['$scope', '$route', '$uibModal', function($scope, $route, $uibModal) {
+    .controller('DummyCtrl', ['$scope', '$route', '$uibModal', 'uiGridConstants', function($scope, $route, $uibModal, uiGridConstants) {
         'use strict';
 
         $scope.title = $route.current.$$route.params.title;
@@ -213,19 +213,214 @@ angular.module('adminlte')
 
         // codemirror
         $scope.codemirrorCode = '<!doctype html>\n' +
-                                '<html>\n' +
-                                '    <head>\n' +
-                                '        <title>Hello World</title>\n' +
-                                '    </head>\n' +
-                                '    <body>\n' +
-                                '        <h1>\n' +
-                                '            Hello World\n' +
-                                '        </h1>\n' +
-                                '        <p>\n' +
-                                '            How are you?\n' +
-                                '        </p>\n' +
-                                '    </body>\n' +
-                                '</html>';
+            '<html>\n' +
+            '    <head>\n' +
+            '        <title>Hello World</title>\n' +
+            '    </head>\n' +
+            '    <body>\n' +
+            '        <h1>\n' +
+            '            Hello World\n' +
+            '        </h1>\n' +
+            '        <p>\n' +
+            '            How are you?\n' +
+            '        </p>\n' +
+            '    </body>\n' +
+            '</html>';
+
+
+        // SIMPLE TABLES
+        var pages = [
+            [{
+                num: 1,
+                text: 'Update software',
+                progress: 55,
+                progressClass: 'progress-bar-danger',
+                badgeBg: 'bg-red'
+            }, {
+                num: 2,
+                text: 'Clean database',
+                progress: 70,
+                progressClass: 'progress-bar-yellow',
+                badgeBg: 'bg-yellow'
+            }, {
+                num: 3,
+                text: 'Cron job running',
+                progress: 30,
+                progressClass: 'progress-bar-primary',
+                badgeBg: 'bg-light-blue'
+            }, {
+                num: 4,
+                text: 'Fix and squish bugs',
+                progress: 90,
+                progressClass: 'progress-bar-success',
+                badgeBg: 'bg-green'
+            }],
+            [{
+                num: 5,
+                text: 'Update software',
+                progress: 55,
+                progressClass: 'progress-bar-danger',
+                badgeBg: 'bg-red'
+            }, {
+                num: 6,
+                text: 'Clean database',
+                progress: 70,
+                progressClass: 'progress-bar-yellow',
+                badgeBg: 'bg-yellow'
+            }, {
+                num: 7,
+                text: 'Cron job running',
+                progress: 30,
+                progressClass: 'progress-bar-primary',
+                badgeBg: 'bg-light-blue'
+            }, {
+                num: 8,
+                text: 'Fix and squish bugs',
+                progress: 90,
+                progressClass: 'progress-bar-success',
+                badgeBg: 'bg-green'
+            }],
+            [{
+                num: 9,
+                text: 'Update software',
+                progress: 55,
+                progressClass: 'progress-bar-danger',
+                badgeBg: 'bg-red'
+            }, {
+                num: 10,
+                text: 'Clean database',
+                progress: 70,
+                progressClass: 'progress-bar-yellow',
+                badgeBg: 'bg-yellow'
+            }, {
+                num: 11,
+                text: 'Cron job running',
+                progress: 30,
+                progressClass: 'progress-bar-primary',
+                badgeBg: 'bg-light-blue'
+            }, {
+                num: 12,
+                text: 'Fix and squish bugs',
+                progress: 90,
+                progressClass: 'progress-bar-success',
+                badgeBg: 'bg-green'
+            }],
+            [{
+                num: 13,
+                text: 'Update software',
+                progress: 55,
+                progressClass: 'progress-bar-danger',
+                badgeBg: 'bg-red'
+            }, {
+                num: 14,
+                text: 'Clean database',
+                progress: 70,
+                progressClass: 'progress-bar-yellow',
+                badgeBg: 'bg-yellow'
+            }, {
+                num: 15,
+                text: 'Cron job running',
+                progress: 30,
+                progressClass: 'progress-bar-primary',
+                badgeBg: 'bg-light-blue'
+            }, {
+                num: 16,
+                text: 'Fix and squish bugs',
+                progress: 90,
+                progressClass: 'progress-bar-success',
+                badgeBg: 'bg-green'
+            }]
+        ];
+        $scope.simpleTables = {
+            tasks: pages[0],
+            pages: pages,
+            pageIndex: 0,
+            switchPage: function(index) {
+                $scope.simpleTables.pageIndex = index;
+                $scope.simpleTables.tasks = pages[index];
+            },
+            next: function() {
+                if (!$scope.simpleTables.canNext()) {
+                    return;
+                }
+                $scope.simpleTables.pageIndex++;
+                $scope.simpleTables.tasks = pages[$scope.simpleTables.pageIndex];
+            },
+            prev: function() {
+                if (!$scope.simpleTables.canPrev()) {
+                    return;
+                }
+                $scope.simpleTables.pageIndex--;
+                $scope.simpleTables.tasks = pages[$scope.simpleTables.pageIndex];
+            },
+            canNext: function() {
+                if ($scope.simpleTables.pageIndex >= ($scope.simpleTables.pages.length - 1)) {
+                    return false;
+                }
+                return true;
+            },
+            canPrev: function() {
+                if ($scope.simpleTables.pageIndex === 0) {
+                    return false;
+                }
+                return true;
+            },
+
+            people: [{
+                id: 183,
+                user: 'John Doe',
+                date: '11-7-2014',
+                status: 'Approved',
+                reason: 'Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.'
+            }, {
+                id: 219,
+                user: 'Alexander Pierce',
+                date: '11-7-2014',
+                status: 'Pending',
+                reason: 'Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.'
+            }, {
+                id: 657,
+                user: 'Bob Doe',
+                date: '11-7-2014',
+                status: 'Approved',
+                reason: 'Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.'
+            }, {
+                id: 175,
+                user: 'Mike Doe',
+                date: '11-7-2014',
+                status: 'Approved',
+                reason: 'Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.'
+            }, ],
+            search: ''
+        };
+
+
+        // UI Grid
+
+        $scope.uigrid = {
+            simple: {
+                options: {
+                    data: [{
+                        "firstName": "Cox",
+                        "lastName": "Carney",
+                        "company": "Enormo",
+                        "employed": true
+                    }, {
+                        "firstName": "Lorraine",
+                        "lastName": "Wise",
+                        "company": "Comveyer",
+                        "employed": false
+                    }, {
+                        "firstName": "Nancy",
+                        "lastName": "Waters",
+                        "company": "Fuelton",
+                        "employed": false
+                    }],
+                    enableHorizontalScrollbar: uiGridConstants.scrollbars.NEVER
+                }
+
+            }
+        }
 
 
     }]);
