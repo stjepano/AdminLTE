@@ -1,11 +1,11 @@
 angular.module('adminlte')
-    .directive('inputMask', function() {
+    .directive('colorpicker', function() {
         'use strict';
         var directive = {
             restrict: 'A',
             link: function(scope, el, attrs) {
                 var $ = jQuery;
-                $(el).inputmask(scope.$eval(attrs.inputMask));
+                $(el).colorpicker(scope.$eval(attrs.colorpicker));
             }
         };
         return directive;

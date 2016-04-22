@@ -34,7 +34,9 @@
     "angular-select2": "^1.4.3",
     "ng-bs-daterangepicker": "^0.0.5",
     "jquery.inputmask": "^3.3.1",
-    "iCheck": "^1.0.2"
+    "iCheck": "^1.0.2",
+    "bootstrap-timepicker": "^0.5.2",
+    "mjolnic-bootstrap-colorpicker": "bootstrap-colorpicker#^2.3.3"
   },
   "resolutions": {
     "angular": "^1.5.0",
