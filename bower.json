@@ -31,9 +31,13 @@
     "angular-bootstrap-slider": "^0.1.26",
     "ui-select": "angular-ui-select#^0.16.1",
     "angular-sanitize": "^1.5.5",
-    "angular-select2": "^1.4.3"
+    "angular-select2": "^1.4.3",
+    "ng-bs-daterangepicker": "^0.0.5",
+    "jquery.inputmask": "^3.3.1",
+    "iCheck": "^1.0.2"
   },
   "resolutions": {
-    "angular": "^1.5.0"
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6"
   }
 }

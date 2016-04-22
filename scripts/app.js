@@ -1,4 +1,4 @@
-var app = angular.module('adminlte', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize'])
+var app = angular.module('adminlte', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize', 'ngBootstrap'])
 .config(function($routeProvider) {
     "use strict";
 

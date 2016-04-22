@@ -80,7 +80,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                            <input type="text" class="form-control" input-mask="{alias: 'dd/mm/yyyy'}" ng-model="dateMask1" />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -92,7 +92,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask>
+                            <input type="text" class="form-control" input-mask="{alias: 'dd.mm.yyyy'}" ng-model="dateMask2" />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -106,7 +106,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-phone"></i>
                             </div>
-                            <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                            <input type="text" class="form-control" input-mask='{"mask": "(999) 999-9999"}' ng-model="usPhoneMask" />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -120,7 +120,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-phone"></i>
                             </div>
-                            <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
+                            <input type="text" class="form-control" input-mask='{"mask": ["999-999-9999 [x99999]", "+099 99 99 9999[9]-9999"]}' />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -134,7 +134,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-laptop"></i>
                             </div>
-                            <input type="text" class="form-control" data-inputmask="'alias': 'ip'" data-mask>
+                            <input type="text" class="form-control" input-mask='{"alias": "ip"}' />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -209,7 +209,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right" id="reservation">
+                            <input type="daterange" class="form-control pull-right" id="reservation" ng-model="reservation">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -223,7 +223,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-clock-o"></i>
                             </div>
-                            <input type="text" class="form-control pull-right" id="reservationtime">
+                            <input type="daterange" class="form-control pull-right" id="reservationtime" ng-model="reservationTime" enabletimepicker="true" format="DD.MM.YYYY hh:mm" />
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -234,10 +234,10 @@
                         <label>Date range button:</label>
 
                         <div class="input-group">
-                            <button type="button" class="btn btn-default pull-right" id="daterange-btn">
-                                <i class="fa fa-calendar"></i> Date range picker
-                                <i class="fa fa-caret-down"></i>
-                            </button>
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="daterange" class="form-control" ranges="ranges" class="btn btn-default pull-right" id="daterange-btn" ng-model="reservationRanges" />
                         </div>
                     </div>
                     <!-- /.form group -->
@@ -258,26 +258,26 @@
                     <!-- checkbox -->
                     <div class="form-group">
                         <label>
-                            <input type="checkbox" class="minimal" checked>
+                            <input icheck="minimal-blue" type="checkbox" class="minimal" ng-model="icheck.cb0" />
                         </label>
                         <label>
-                            <input type="checkbox" class="minimal">
+                            <input icheck="minimal-blue" type="checkbox" class="minimal" ng-model="icheck.cb1" />
                         </label>
                         <label>
-                            <input type="checkbox" class="minimal" disabled> Minimal skin checkbox
+                            <input icheck="minimal-blue" type="checkbox" class="minimal" ng-disabled="true" ng-model="icheck.cb2" /> Minimal skin checkbox
                         </label>
                     </div>
 
                     <!-- radio -->
                     <div class="form-group">
                         <label>
-                            <input type="radio" name="r1" class="minimal" checked>
+                            <input icheck="minimal-blue" type="radio" name="r1" class="minimal" ng-model="icheck.opt" value="1" />
                         </label>
                         <label>
-                            <input type="radio" name="r1" class="minimal">
+                            <input icheck="minimal-blue" type="radio" name="r1" class="minimal" ng-model="icheck.opt" value="2" />
                         </label>
                         <label>
-                            <input type="radio" name="r1" class="minimal" disabled> Minimal skin radio
+                            <input icheck="minimal-blue" type="radio" name="r1" class="minimal" ng-disabled="true" ng-model="icheck.opt" value="3"> Minimal skin radio
                         </label>
                     </div>
 
@@ -286,54 +286,54 @@
                     <!-- checkbox -->
                     <div class="form-group">
                         <label>
-                            <input type="checkbox" class="minimal-red" checked>
+                            <input icheck="minimal-red" type="checkbox" class="minimal" ng-model="icheck.cb0" />
                         </label>
                         <label>
-                            <input type="checkbox" class="minimal-red">
+                            <input icheck="minimal-red" type="checkbox" class="minimal" ng-model="icheck.cb1" />
                         </label>
                         <label>
-                            <input type="checkbox" class="minimal-red" disabled> Minimal red skin checkbox
+                            <input icheck="minimal-red" type="checkbox" class="minimal" ng-disabled="true" ng-model="icheck.cb2" /> Minimal red skin checkbox
                         </label>
                     </div>
 
                     <!-- radio -->
                     <div class="form-group">
                         <label>
-                            <input type="radio" name="r2" class="minimal-red" checked>
+                            <input icheck="minimal-red" type="radio" name="r2" class="minimal" ng-model="icheck.opt" value="1">
                         </label>
                         <label>
-                            <input type="radio" name="r2" class="minimal-red">
+                            <input icheck="minimal-red" type="radio" name="r2" class="minimal" ng-model="icheck.opt" value="2">
                         </label>
                         <label>
-                            <input type="radio" name="r2" class="minimal-red" disabled> Minimal red skin radio
+                            <input icheck="minimal-red" type="radio" name="r2" class="minimal" ng-disabled="true" ng-model="icheck.opt" value="3"> Minimal red skin radio
                         </label>
                     </div>
 
-                    <!-- Minimal red style -->
+                    <!-- Flat green style -->
 
                     <!-- checkbox -->
                     <div class="form-group">
                         <label>
-                            <input type="checkbox" class="flat-red" checked>
+                            <input icheck="flat-green" type="checkbox" class="minimal" ng-model="icheck.cb0" />
                         </label>
                         <label>
-                            <input type="checkbox" class="flat-red">
+                            <input icheck="flat-green" type="checkbox" class="minimal" ng-model="icheck.cb1" />
                         </label>
                         <label>
-                            <input type="checkbox" class="flat-red" disabled> Flat green skin checkbox
+                            <input icheck="flat-green" type="checkbox" class="minimal" ng-disabled="true" ng-model="icheck.cb2" /> Minimal red skin checkbox
                         </label>
                     </div>
 
                     <!-- radio -->
                     <div class="form-group">
                         <label>
-                            <input type="radio" name="r3" class="flat-red" checked>
+                            <input icheck="flat-green" type="radio" name="r2" class="minimal" ng-model="icheck.opt" value="1">
                         </label>
                         <label>
-                            <input type="radio" name="r3" class="flat-red">
+                            <input icheck="flat-green" type="radio" name="r2" class="minimal" ng-model="icheck.opt" value="2">
                         </label>
                         <label>
-                            <input type="radio" name="r3" class="flat-red" disabled> Flat green skin radio
+                            <input icheck="flat-green" type="radio" name="r2" class="minimal" ng-disabled="true" ng-model="icheck.opt" value="3"> Minimal red skin radio
                         </label>
                     </div>
                 </div>
