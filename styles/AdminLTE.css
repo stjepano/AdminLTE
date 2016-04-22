@@ -4930,3 +4930,45 @@ table.text-center th {
 #purple .slider-selection {
   background: #932ab6;
 }
+.form-group .select2-container.form-control {
+  padding: 0;
+}
+.form-group .select2-container.form-control a.select2-choice {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  line-height: 30px;
+  height: 30px;
+}
+.form-group .select2-container.form-control a.select2-choice span.select2-arrow {
+  background: none;
+  border-left-color: transparent;
+}
+.form-group .select2-container.form-control ul.select2-choices {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  line-height: 30px;
+  height: 30px;
+}
+.form-group .select2-container.form-control ul.select2-choices .select2-search-field {
+  height: 32px;
+  line-height: normal;
+}
+.form-group .select2-container.form-control ul.select2-choices li.select2-search-choice {
+  background-color: #3c8dbc;
+  border-color: #367fa9;
+  background-image: none;
+  color: #fff;
+  box-shadow: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.form-group .select2-container.form-control ul.select2-choices li.select2-search-choice a.select2-search-choice-close {
+  top: 6px;
+}
+.form-group .select2-container-disabled {
+  background: #eee;
+}

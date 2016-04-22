@@ -1,8 +1,10 @@
 angular.module('adminlte')
     .controller('DummyCtrl', ['$scope', '$route', '$uibModal', function($scope, $route, $uibModal) {
+        'use strict';
+
         $scope.title = $route.current.$$route.params.title;
         $scope.desc = $route.current.$$route.params.desc || '';
-        
+
         $scope.alerts = [
             { type: 'danger', canClose: true, iconClass: 'fa fa-ban', title: 'Alert!', content: 'Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.' },
             { type: 'info', canClose: true, iconClass: 'fa fa-info', title: 'Alert!', content: 'Info alert preview. This alert is dismissable.'},
@@ -92,6 +94,27 @@ angular.module('adminlte')
                 alert('Dismiss ' + val);
             });
         };
-        
+
+
+        var countries = [
+            {id: 1, name: 'Alabama'},
+            {id: 2, name: 'Alaska'},
+            {id: 3, name: 'California'},
+            {id: 4, name: 'Delaware'},
+            {id: 5, name: 'Tennessee'},
+            {id: 6, name: 'Texas'},
+            {id: 7, name: 'Washington'}
+        ];
+        // SELECT2
+        $scope.minimalSelect = {
+            itemArray: countries,
+            selected: countries[0].id
+        };
+
+        $scope.multipleSelect = {
+            itemArray: countries,
+            selected: [countries[0].id]
+        };
+
 
     }]);

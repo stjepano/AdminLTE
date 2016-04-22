@@ -28,3 +28,55 @@
 #purple .slider-selection {
   background: #932ab6;
 }
+
+.form-group {
+    .select2-container.form-control {
+        padding: 0;
+
+        a.select2-choice {
+            border: 0;
+            border-radius: 0;
+            background: none;
+            box-shadow: none;
+            line-height: 30px;
+            height: 30px;
+
+            span.select2-arrow {
+                background: none;
+                border-left-color: transparent;
+            }
+        }
+
+        ul.select2-choices {
+            border: 0;
+            border-radius: 0;
+            background: none;
+            box-shadow: none;
+            line-height: 30px;
+            height: 30px;
+
+            .select2-search-field {
+                height: 32px;
+                line-height: normal;
+            }
+
+            li.select2-search-choice {
+                background-color: @light-blue;
+                border-color: darken(@light-blue, 5%);
+                background-image: none;
+                color: #fff;
+                box-shadow: none;
+                padding-top: 6px;
+                padding-bottom: 6px;
+
+                a.select2-search-choice-close {
+                    top: 6px;
+                }
+            }
+        }
+    }
+
+    .select2-container-disabled {
+        background: #eee;
+    }
+}
