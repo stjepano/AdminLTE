@@ -50,28 +50,30 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$sta
         ]
     };
 
-    var toggleMenuItemsActiveState = function(menu, path) {
-        if ( !menu.items ) return;
+    var toggleMenuItemsActiveState = function(menu) {
+        if ( !menu.items ) return 0;
+        var sum = 0;
         menu.items.forEach(function(menuItem) {
-            var itemPath = menuItem.href;
-            if ( menuItem.href && menuItem.href.startsWith('#') ) {
-                itemPath = menuItem.href.substring(1);
-            }
-
-            if ( itemPath === path ) {
+            if ( $state.is(menuItem.sref) ) {
                 menuItem.active = true;
+                sum += 1;
             } else {
                 menuItem.active = false;
             }
 
-            toggleMenuItemsActiveState(menuItem, path);
+            sum += toggleMenuItemsActiveState(menuItem);
         });
+        if ( sum > 0 ) {
+            menu.active = true;
+        }
+        return sum;
     };
 
-    $rootScope.$on('$routeChangeSuccess', function(event, next) {
-        var path = next.$$route.originalPath;
-        toggleMenuItemsActiveState(self.menu, path);
+    $rootScope.$on('$stateChangeSuccess', function(event, next) {
+        toggleMenuItemsActiveState(self.menu);
     });
+
+    toggleMenuItemsActiveState(self.menu);
 
     this.toggleStatus = function() {
         session.toggleStatus();
@@ -81,4 +83,6 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$sta
         console.log('Searching for ' + self.searchTerm);
         self.searchTerm = '';
     };
+
+
 }]);
