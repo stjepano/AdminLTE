@@ -137,6 +137,40 @@ var app = angular.module('adminlte', ['ui.mask', 'ui.bootstrap',
             title: 'Calendar',
             desc: 'Angular UI Calendar'
         }
+    })
+    .state('mailbox', {
+        abstract: true,
+        url: '/mailbox',
+        controller: 'MailboxCtrl',
+        templateUrl: 'views/mailbox/mailbox.html',
+        data: {
+            title: 'Mailbox',
+            desc: ''
+        }
+    })
+    .state('mailbox.folder', {
+        url: '/folder/:folder',
+        templateUrl: 'views/mailbox/inbox.html',
+        data: {
+            title: 'Mailbox',
+            desc: 'Inbox'
+        }
+    })
+    .state('mailbox.single', {
+        url: '/single',
+        templateUrl: 'views/mailbox/single.html',
+        data: {
+            title: 'Mailbox',
+            desc: 'View item'
+        }
+    })
+    .state('mailbox.compose', {
+        url: '/compose',
+        templateUrl: 'views/mailbox/compose.html',
+        data: {
+            title: 'Mailbox',
+            desc: 'Compose'
+        }
     });
 
 });

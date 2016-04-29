@@ -46,15 +46,29 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$sta
                 sref: 'calendar',
                 text: 'Calendar',
                 icon: 'fa fa-calendar'
+            },
+            {
+                text: 'Mailbox',
+                icon: 'fa fa-envelope',
+                sref: 'mailbox.folder({folder: "inbox"})'
             }
         ]
     };
 
+    function stateNameWithoutParams(sref) {
+        if ( sref === undefined ) return '';
+        var regex = /^([^(]+).*$/;
+        var match = sref.match(regex);
+        if ( match == null ) return '';
+        return match[1];
+    }
+
     var toggleMenuItemsActiveState = function(menu) {
         if ( !menu.items ) return 0;
+
         var sum = 0;
         menu.items.forEach(function(menuItem) {
-            if ( $state.is(menuItem.sref) ) {
+            if ( $state.is( stateNameWithoutParams(menuItem.sref) ) ) {
                 menuItem.active = true;
                 sum += 1;
             } else {

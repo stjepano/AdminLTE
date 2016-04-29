@@ -12,7 +12,7 @@
 <section class="content">
     <div class="row">
         <div class="col-md-3">
-            <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Compose</a>
+            <a ui-sref="mailbox.compose" class="btn btn-primary btn-block margin-bottom">Compose</a>
 
             <div class="box box-solid">
                 <div class="box-header with-border">
@@ -25,13 +25,13 @@
                 </div>
                 <div class="box-body no-padding">
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#"><i class="fa fa-inbox"></i> Inbox
-              <span class="label label-primary pull-right">12</span></a></li>
-                        <li><a href="#"><i class="fa fa-envelope-o"></i> Sent</a></li>
-                        <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts</a></li>
-                        <li><a href="#"><i class="fa fa-filter"></i> Junk <span class="label label-warning pull-right">65</span></a>
+                        <li ng-class="{ active: folder.active }" ng-repeat="folder in folders">
+                            <a ui-sref="mailbox.folder({ folder: folder.id })">
+                                <i class="{{ folder.icon }}"></i>
+                                {{ folder.text }}
+                                <span ng-if="folder.numUnread" class="label {{ folder.labelClass }} pull-right">{{ folder.numUnread }}</span>
+                            </a>
                         </li>
-                        <li><a href="#"><i class="fa fa-trash-o"></i> Trash</a></li>
                     </ul>
                 </div>
                 <!-- /.box-body -->
@@ -48,9 +48,7 @@
                 </div>
                 <div class="box-body no-padding">
                     <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> Important</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
+                        <li ng-repeat="label in labels"><a href="#"><i class="fa fa-circle-o {{ label.colorClass }}"></i> {{ label.text }}</a></li>
                     </ul>
                 </div>
                 <!-- /.box-body -->
@@ -59,7 +57,7 @@
         </div>
         <!-- /.col -->
         <div class="col-md-9">
-            <div ng-view></div>
+            <div ui-view></div>
         </div>
         <!-- /.col -->
     </div>
