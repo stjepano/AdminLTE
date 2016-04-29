@@ -1,9 +1,9 @@
 angular.module('adminlte')
-    .controller('CalendarCtrl', ['$scope', '$route', 'uiCalendarConfig', function($scope, $route, uiCalendarConfig) {
+    .controller('CalendarCtrl', ['$scope', '$state', function($scope, $state) {
         'use strict';
 
-        $scope.title = $route.current.$$route.params.title;
-        $scope.desc = $route.current.$$route.params.desc || '';
+        $scope.title = $state.current.data.title;
+        $scope.desc = $state.current.data.desc || '';
 
         $scope.externalEvents = [
             { color: 'green', title: 'Lunch' },
@@ -38,13 +38,6 @@ angular.module('adminlte')
           },
           editable: true,
           droppable: true,
-          eventDrop: function(event, delta, revertFunc, jsEvent, ui, view) {
-              console.log(event, delta);
-          },
-          eventRender: function(event, element, view) {
-              console.log('eventRender');
-              console.log($scope.events);
-          },
           drop: function(date, allDay) { // this function is called when something is dropped
 
                     var $ = jQuery;

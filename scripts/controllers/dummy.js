@@ -1,9 +1,9 @@
 angular.module('adminlte')
-    .controller('DummyCtrl', ['$scope', '$route', '$uibModal', 'uiGridConstants', function($scope, $route, $uibModal, uiGridConstants) {
+    .controller('DummyCtrl', ['$scope', '$state', '$uibModal', 'uiGridConstants', function($scope, $state, $uibModal, uiGridConstants) {
         'use strict';
 
-        $scope.title = $route.current.$$route.params.title;
-        $scope.desc = $route.current.$$route.params.desc || '';
+        $scope.title = $state.current.data.title;
+        $scope.desc = $state.current.data.desc || '';
 
         $scope.alerts = [{
             type: 'danger',

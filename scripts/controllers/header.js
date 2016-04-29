@@ -1,4 +1,5 @@
 angular.module('adminlte').controller('HeaderCtrl', ['$scope', '$q', 'Session', function($scope, $q, session) {
+    'use strict';
 
     var self = this;
 
@@ -18,9 +19,9 @@ angular.module('adminlte').controller('HeaderCtrl', ['$scope', '$q', 'Session', 
         console.log('logout requested');
         session.logout();
     };
-    
-    
-    
+
+
+
 
 
 }]);

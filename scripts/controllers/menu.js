@@ -1,4 +1,6 @@
-angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$route', 'Session', function($rootScope, $scope, $route, session) {
+angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$state', 'Session', function($rootScope, $scope, $state, session) {
+    'use strict';
+
     var self = this;
     this.user = session.user();
     this.searchTerm = '';
@@ -6,7 +8,7 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$rou
         header: 'MENU',
         items: [
             {
-                href: '#/',
+                sref: 'index',
                 text: 'Home',
                 icon: 'fa fa-link'
             },
@@ -14,53 +16,36 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$rou
                 text: 'UI Elements',
                 icon: 'fa fa-laptop',
                 items: [
-                    { href: '#/ui-elements/general', text: 'General', icon: 'fa fa-circle-o'},
-                    { href: '#/ui-elements/icons', text: 'Icons', icon: 'fa fa-circle-o'},
-                    { href: '#/ui-elements/buttons', text: 'Buttons', icon: 'fa fa-circle-o'},
-                    { href: '#/ui-elements/sliders', text: 'Sliders', icon: 'fa fa-circle-o'},
-                    { href: '#/ui-elements/timeline', text: 'Timeline', icon: 'fa fa-circle-o'},
-                    { href: '#/ui-elements/modals', text: 'Modals', icon: 'fa fa-circle-o'},
+                    { sref: 'ui-elements.general', text: 'General', icon: 'fa fa-circle-o'},
+                    { sref: 'ui-elements.icons', text: 'Icons', icon: 'fa fa-circle-o'},
+                    { sref: 'ui-elements.buttons', text: 'Buttons', icon: 'fa fa-circle-o'},
+                    { sref: 'ui-elements.sliders', text: 'Sliders', icon: 'fa fa-circle-o'},
+                    { sref: 'ui-elements.timeline', text: 'Timeline', icon: 'fa fa-circle-o'},
+                    { sref: 'ui-elements.modals', text: 'Modals', icon: 'fa fa-circle-o'},
                 ]
             },
             {
                 text: 'Forms',
                 icon: 'fa fa-edit',
                 items: [
-                    { href: '#/forms/general', text: 'General Elements', icon: 'fa fa-circle-o' },
-                    { href: '#/forms/advanced', text: 'Advanced Elements', icon: 'fa fa-circle-o' },
-                    { href: '#/forms/editors', text: 'Editors', icon: 'fa fa-circle-o' },
-                    { href: '#/forms/codemirror', text: 'CodeMirror', icon: 'fa fa-circle-o' }
+                    { sref: 'forms.general', text: 'General Elements', icon: 'fa fa-circle-o' },
+                    { sref: 'forms.advanced', text: 'Advanced Elements', icon: 'fa fa-circle-o' },
+                    { sref: 'forms.editors', text: 'Editors', icon: 'fa fa-circle-o' },
+                    { sref: 'forms.codemirror', text: 'CodeMirror', icon: 'fa fa-circle-o' }
                 ]
             },
             {
                 text: 'Tables',
                 icon: 'fa fa-table',
                 items: [
-                    { href: '#/tables/simple', text: 'Simple tables', icon: 'fa fa-circle-o' },
-                    { href: '#/tables/uigrid', text: 'UI Grid', icon: 'fa fa-circle-o' }
+                    { sref: 'tables.simple', text: 'Simple tables', icon: 'fa fa-circle-o' },
+                    { sref: 'tables.uigrid', text: 'UI Grid', icon: 'fa fa-circle-o' }
                 ]
             },
             {
-                href: '#/calendar',
+                sref: 'calendar',
                 text: 'Calendar',
                 icon: 'fa fa-calendar'
-            },
-            {
-                href: '#/page2',
-                text: 'Page 2',
-                icon: 'fa fa-link'
-            },
-            {
-                text: 'Multi level',
-                href: '#/multi',
-                icon: 'fa fa-link',
-                items: [{
-                    href: '#/multi/first',
-                    text: 'Link in level 2'
-                }, {
-                    href: '#/multi/second',
-                    text: 'Link in level 2'
-                }]
             }
         ]
     };
@@ -83,7 +68,7 @@ angular.module('adminlte').controller('MenuCtrl', ['$rootScope', '$scope', '$rou
         });
     };
 
-    $rootScope.$on('$routeChangeSuccess', function(event, next, current) {
+    $rootScope.$on('$routeChangeSuccess', function(event, next) {
         var path = next.$$route.originalPath;
         toggleMenuItemsActiveState(self.menu, path);
     });

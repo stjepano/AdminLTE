@@ -1,4 +1,6 @@
 angular.module('adminlte').directive('menuTree', ['$window','AdminLTEService', function($window, AdminLTEService) {
+    'use strict';
+
     var directive = {};
     directive.restrict = 'E';
 
@@ -15,7 +17,7 @@ angular.module('adminlte').directive('menuTree', ['$window','AdminLTEService', f
     directive.link = function (scope, element, attrs) {
         // if change this also change fullheight.changeHeight
         var win = angular.element($window);
-        
+
         var fix = function() {
             var el = jQuery('.content-wrapper');
             if (jQuery('body').hasClass('fixed')) {

@@ -1,9 +1,10 @@
 <ul class="{{ css }}">
     <li class="header" ng-if="menu.header">{{ menu.header }}</li>
     <li ng-repeat="menuItem in menu.items" ng-class="{active: menuItem.active}">
-        <a href="{{ menuItem.href }}"><i ng-if="menuItem.icon" class="{{ menuItem.icon }}"></i> <span>{{ menuItem.text }}</span> <i class="fa fa-angle-left pull-right" ng-if="menuItem.items"></i></a>
+        <a ng-if="menuItem.sref" ui-sref="{{ menuItem.sref }}"><i ng-if="menuItem.icon" class="{{ menuItem.icon }}"></i> <span>{{ menuItem.text }}</span> <i class="fa fa-angle-left pull-right" ng-if="menuItem.items"></i></a>
+        <a ng-if="!menuItem.sref" href=""><i ng-if="menuItem.icon" class="{{ menuItem.icon }}"></i> <span>{{ menuItem.text }}</span> <i class="fa fa-angle-left pull-right" ng-if="menuItem.items"></i></a>
         <ul class="treeview-menu" ng-if="menuItem.items">
-            <li ng-repeat="subItem in menuItem.items" ng-class="{active: subItem.active}"><a href="{{ subItem.href }}"><i ng-if="subItem.icon" class="{{ subItem.icon }}"></i> {{ subItem.text }}</a></li>
+            <li ng-repeat="subItem in menuItem.items" ng-class="{active: subItem.active}"><a ui-sref="{{ subItem.sref }}"><i ng-if="subItem.icon" class="{{ subItem.icon }}"></i> {{ subItem.text }}</a></li>
         </ul>
     </li>
 </ul>

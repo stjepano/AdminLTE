@@ -1,161 +1,142 @@
-var app = angular.module('adminlte', ['ngRoute', 'ui.mask', 'ui.bootstrap', 'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize', 'ngBootstrap', 'textAngular', 'ui.tinymce', 'ui.codemirror', 'ui.grid', 'ui.grid.selection', 'ui.calendar'])
-.config(function($routeProvider) {
+var app = angular.module('adminlte', ['ui.mask', 'ui.bootstrap',
+'ngAnimate', 'ui.bootstrap-slider', 'rt.select2', 'ngSanitize', 'ngBootstrap',
+'textAngular', 'ui.tinymce', 'ui.codemirror', 'ui.grid', 'ui.grid.selection',
+'ui.calendar', 'ui.router'])
+.config(function($stateProvider) {
     "use strict";
 
-    $routeProvider
-    .when('/', {
+    $stateProvider
+    .state('index', {
+        url: '/',
         controller: 'DummyCtrl',
         templateUrl: 'views/empty.html',
-        params: {
+        data: {
             title: 'Home',
             desc: 'Optional subtitle'
         }
     })
-    .when('/ui-elements/general', {
+    .state('ui-elements', {
+        abstract: true,
+        url: '/ui-elements',
         controller: 'DummyCtrl',
+        template: '<ui-view/>'
+    })
+    .state('ui-elements.general', {
         templateUrl: 'views/ui-elements/general.html',
-        params: {
+        url: '/general',
+        data: {
             title: 'General UI',
             desc: 'Preview of UI elements'
         }
     })
-    .when('/ui-elements/icons', {
-        controller: 'DummyCtrl',
+    .state('ui-elements.icons', {
         templateUrl: 'views/ui-elements/icons.html',
-        params: {
+        url: '/icons',
+        data: {
             title: 'Icons',
             desc: 'a set of beautiful icons'
         }
     })
-    .when('/ui-elements/buttons', {
-        controller: 'DummyCtrl',
+    .state('ui-elements.buttons', {
         templateUrl: 'views/ui-elements/buttons.html',
-        params: {
+        url: '/buttons',
+        data: {
             title: 'Buttons',
             desc: 'a set of buttons'
         }
     })
-    .when('/ui-elements/sliders', {
-        controller: 'DummyCtrl',
+    .state('ui-elements.sliders', {
         templateUrl: 'views/ui-elements/sliders.html',
-        params: {
+        url: '/sliders',
+        data: {
             title: 'Sliders',
             desc: 'range sliders'
         }
     })
-    .when('/ui-elements/timeline', {
-        controller: 'DummyCtrl',
+    .state('ui-elements.timeline', {
         templateUrl: 'views/ui-elements/timeline.html',
-        params: {
+        url: '/timeline',
+        data: {
             title: 'Timeline',
             desc: 'example'
         }
     })
-    .when('/ui-elements/modals', {
-        controller: 'DummyCtrl',
+    .state('ui-elements.modals', {
         templateUrl: 'views/ui-elements/modals.html',
-        params: {
+        url: '/modals',
+        data: {
             title: 'Modals',
             desc: 'new'
         }
     })
-    .when('/forms/general', {
+    .state('forms', {
+        abstract: true,
+        url: '/forms',
         controller: 'DummyCtrl',
+        template: '<ui-view/>'
+    })
+    .state('forms.general', {
         templateUrl: 'views/forms/general.html',
-        params: {
+        url: '/general',
+        data: {
             title: 'General Form Elements',
             desc: 'Preview'
         }
     })
-    .when('/forms/advanced', {
-        controller: 'DummyCtrl',
+    .state('forms.advanced', {
         templateUrl: 'views/forms/advanced.html',
-        params: {
+        url: '/advanced',
+        data: {
             title: 'Advanced Form Elements',
             desc: 'Preview'
         }
     })
-    .when('/forms/editors', {
-        controller: 'DummyCtrl',
+    .state('forms.editors', {
         templateUrl: 'views/forms/editors.html',
-        params: {
+        url: '/editors',
+        data: {
             title: 'Text Editors',
             desc: 'Advanced form element'
         }
     })
-    .when('/forms/codemirror', {
-        controller: 'DummyCtrl',
+    .state('forms.codemirror', {
         templateUrl: 'views/forms/codemirror.html',
-        params: {
+        url: '/codemirror',
+        data: {
             title: 'CodeMirror',
             desc: 'Advanced code editor'
         }
     })
-    .when('/tables/simple', {
+    .state('tables', {
+        abstract: true,
+        url: '/tables',
         controller: 'DummyCtrl',
+        template: '<ui-view/>'
+    })
+    .state('tables.simple', {
         templateUrl: 'views/tables/simple.html',
-        params: {
+        url: '/simple',
+        data: {
             title: 'Simple Tables',
             desc: 'preview of simple tables'
         }
     })
-    .when('/tables/uigrid', {
-        controller: 'DummyCtrl',
+    .state('tables.uigrid', {
         templateUrl: 'views/tables/uigrid.html',
-        params: {
+        url: '/uigrid',
+        data: {
             title: 'Angular UI Grid',
             desc: 'A data grid for AngularJS'
         }
     })
-    .when('/calendar', {
+    .state('calendar', {
+        url: '/calendar',
         controller: 'CalendarCtrl',
         templateUrl: 'views/calendar.html',
-        params: {
+        data: {
             title: 'Calendar',
             desc: 'Angular UI Calendar'
         }
-    })
-    .when('/page1', {
-        controller: 'DummyCtrl',
-        templateUrl: 'views/empty.html',
-        params: {
-            title: 'Page 1'
-        }
-    })
-    .when('/page2', {
-        controller: 'DummyCtrl',
-        templateUrl: 'views/empty.html',
-        params: {
-            title: 'Page 2',
-            desc: 'Description of Page 2'
-        }
-    })
-    .when('/multi', {
-        controller: 'DummyCtrl',
-        templateUrl: 'views/empty.html',
-        params: {
-            title: 'Multi',
-            desc: 'Description of Multi'
-        }
-    })
-    .when('/multi/first', {
-        controller: 'DummyCtrl',
-        templateUrl: 'views/empty.html',
-        params: {
-            title: 'Multi First',
-            desc: 'Description of Multi First'
-        }
-    })
-    .when('/multi/second', {
-        controller: 'DummyCtrl',
-        templateUrl: 'views/empty.html',
-        params: {
-            title: 'Multi Second',
-            desc: 'Description of Multi second'
-        }
-    })
-    .otherwise({
-        redirectTo: '/'
     });
 
 });
