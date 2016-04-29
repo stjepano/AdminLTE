@@ -1,5 +1,5 @@
 angular.module('adminlte')
-    .controller('CalendarCtrl', ['$scope', '$route', function($scope, $route) {
+    .controller('CalendarCtrl', ['$scope', '$route', 'uiCalendarConfig', function($scope, $route, uiCalendarConfig) {
         'use strict';
 
         $scope.title = $route.current.$$route.params.title;
@@ -25,19 +25,26 @@ angular.module('adminlte')
         };
 
         $scope.calendarOptions = {
-            header: {
+          header: {
               left: 'prev,next today',
               center: 'title',
               right: 'month,agendaWeek,agendaDay'
-            },
-            buttonText: {
+          },
+          buttonText: {
               today: 'today',
               month: 'month',
               week: 'week',
               day: 'day'
           },
           editable: true,
-          droppable: true, // this allows things to be dropped onto the calendar !!!
+          droppable: true,
+          eventDrop: function(event, delta, revertFunc, jsEvent, ui, view) {
+              console.log(event, delta);
+          },
+          eventRender: function(event, element, view) {
+              console.log('eventRender');
+              console.log($scope.events);
+          },
           drop: function(date, allDay) { // this function is called when something is dropped
 
                     var $ = jQuery;
@@ -54,10 +61,9 @@ angular.module('adminlte')
                     copiedEventObject.allDay = allDay;
                     copiedEventObject.backgroundColor = $(this).css("background-color");
                     copiedEventObject.borderColor = $(this).css("border-color");
+                    copiedEventObject.stick = true; // important for UI Calendar
 
                     // render the event on the calendar
-                    // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-                    //$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
                     $scope.events.push(copiedEventObject);
 
                     // is the "remove after drop" checkbox checked?
